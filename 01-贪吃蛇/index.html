@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  * {
+    padding: 0;
+    margin: 0;
+  }
+  button {
+    display: block;
+    margin: 0 auto;
+    background-color: pink;
+  }
+  #map {
+    width: 600px;
+    height: 400px;
+    background: #b1eea3;
+    margin: 0 auto;
+    position: relative;
+  }
+  .score {
+    width: 60px;
+    height: 40px;
+    border: 1px solid #ccc; 
+    text-align: center;
+    border-radius: 20px;
+    margin: 0 auto;
+    margin-top :10px;
+    margin-bottom :10px;
+    line-height: 40px;
+    color: blue;
+    font-weight: 700;
+  }
+  </style>
+</head>
+<body>
+  <button>开始游戏</button>
+  <div class="score"></div>
+  <div id="map"></div>
+  <script src="./food.js"></script>
+  <script src="./snake.js"></script>
+  <script src="./game.js"></script>
+  <script>
+    var map = document.querySelector("#map");
+    var btn = document.querySelector("button");
+    var score = document.querySelector(".score");
+    // var flag = true;
+    // var f = new Food();
+  //   f.render(map);
+  //   var s = new Snake();
+  //     s.render(map);
+  //  btn.onclick=function() {
+  //   setInterval(function () {
+  //     s.move(map);
+  //   },300)
+  //  }
+  var s = new Game({
+    map :map 
+  });
+  btn.onclick=function() {
+    // if (flag) {
+    //   flag =false;
+    //   s.start();
+    // }
+    // else {
+    //   clearInterval(timeId);
+    //   flag=true;
+    // }
+    s.start();
+
+  }
+  </script>
+</body>
+</html>
